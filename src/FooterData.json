@@ -1,0 +1,31 @@
+[
+    {
+        "column1_row1":"FAQs", "column1_row1_href":"#",
+        "column1_row2":"Investor Relations", "column1_row2_href":"#",
+        "column1_row3":"Ways to watch", "column1_row3_href":"#",
+        "column1_row4":"Corporate Information", "column1_row4_href":"#",
+        "column1_row5":"Netflix Originals","column1_row5_href":"#"
+    },
+    {
+        "column2_row1":"", "column2_row1_href":"#",
+        "column2_row2":"Help Center", "column2_row2_href":"#",
+        "column2_row3":"Jobs", "column2_row3_href":"#",
+        "column2_row4":"Terms of use", "column2_row4_href":"#",
+        "column2_row5":"Contact Us", "column1_row2_href":"#"
+    },
+    {
+        "column3_row1":"", "column3_row1_href":"#",
+        "column3_row2":"Accounts", "column3_row2_href":"#",
+        "column3_row3":"Redeem Gift Cards", "column3_row3_href":"#",
+        "column3_row4":"Privacy", "column3_row4_href":"#",
+        "column3_row5":"Speed Test", "column3_row5_href":"#"
+    },
+    {
+        "column4_row1":"", "column4_row1_href":"#",
+        "column4_row2":"Media Center", "column4_row2_href":"#",
+        "column4_row3":"Buy Gift Cards", "column4_row3_href":"#",
+        "column4_row4":"Cookie Preferences", "column4_row4_href":"#",
+        "column4_row5":"Legal Notices", "column4_row5_href":"#"
+    }
+    
+]
