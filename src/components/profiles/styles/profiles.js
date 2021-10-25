@@ -17,7 +17,6 @@ text-align:center;
 font-weight:500
 `;
 
-
 export const List=styled.ul`
 padding:0;
 margin:0;
@@ -45,4 +44,23 @@ border:3px solid black;
 cursor:pointer;
 `;
 
-export const User=styled.div``;
+export const Item=styled.div`
+max-height: 200px;
+max-width: 200px;
+list-style-type: none;
+text-align:center;
+margin-right: 30px;
+
+&:hover > ${Picture} {
+    border:3px solid white;
+}
+
+&:hover > ${Name} {
+    font-weight: bold;
+    color: white;
+}
+
+&:last-of-type {
+    margin-right:0;
+}
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container,Title,List,Picture, Name, User} from './styles/profiles';
+import { Container,Title,List,Picture, Name, Item} from './styles/profiles';
 
 export default function Profiles({children, ...restProps})
 {
@@ -20,7 +20,7 @@ Profiles.List=function ProfilesList({children, ...restProps})
 
 Profiles.User=function ProfileUser({children, ...restProps})
 {
-    return <User {...restProps}>{children}</User>
+    return <Item {...restProps}>{children}</Item>
 }
 
 Profiles.Picture=function ProfilePicture({children, src, ...restProps})

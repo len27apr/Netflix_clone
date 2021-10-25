@@ -6,7 +6,7 @@ export default function selectionFilter({series, films})
         series: [
             {
                 title:'Documentaries',
-                data:series.filter((item)=> item.genre ==='documentataries')
+                data:series.filter((item)=> item.genre ==='documentaries')
             },
             {
                 title:'Comedies',
@@ -32,7 +32,7 @@ export default function selectionFilter({series, films})
             },
             {
                 title:'Suspense',
-                data:films.filter((item)=>item.gnere==='suspense')
+                data:films.filter((item)=>item.genre==='suspense')
             },
             {
                 title: 'Children',

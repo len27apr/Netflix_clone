@@ -9,7 +9,6 @@ import { useAuthListener } from './hooks';
 function App() {
   let {user} = useAuthListener();
   // user=user.user==null? null : user;
-  console.log('the value of user is: ',user);
   return (
     <Router>
       <Switch>
