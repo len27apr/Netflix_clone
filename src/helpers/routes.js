@@ -7,7 +7,7 @@ return(
     <Route {...restProps} render={()=>{
         if(!user)
         {
-            console.log('There is no user!! and the path is:', path);
+            // console.log('There is no user!! and the path is:', path);
             return children
         }
         if(user)
