@@ -213,7 +213,7 @@ border:0;
 
 img{
     width:30px;
-}
+}   filter: brightness(0) invert(1);
 `;
 
 export const SearchInput=styled.input`
@@ -223,7 +223,7 @@ border:${({active})=> active?'1px solid black':0};
 transition:width 0.5s;
 height:30px;
 font-size:14px;
-width:${({active})=>active?'120px':'0px'}
+width:${({active})=>active?'130px':'0px'}
 `;
 
 export const PlayButton=styled.button`

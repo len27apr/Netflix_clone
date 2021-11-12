@@ -153,10 +153,9 @@ transition:transform 0.2s;
     z-index:99;
 }
 
-@media(min-weight:1200px)
+@media(min-width:1200px)
 {
-    &:hover ${Meta}, &:hover ${Text}, 
-    &:hover ${SubTitle} {
+    &:hover ${Meta}, &:hover ${Text}, &:hover ${SubTitle} {
         display:block;
         z-index:100;
     }

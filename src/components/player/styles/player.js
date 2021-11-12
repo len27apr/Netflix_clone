@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div `
+
 `;
 
 export const Overlay =styled.div `
@@ -21,7 +22,7 @@ export const Inner =styled.div `
     width:100%;
     max-width: 900px;
     margin:auto;
-
+    border:3px solid green;
     video {
         height:100%;
         width:100%;
@@ -48,4 +49,40 @@ export const Button =styled.button `
         transform: scale(1.05);
         background-color:#ff0816;
     }
+`;
+
+export const Close=styled.button`
+position:absolute;
+top:15px;
+right:15px;
+width:22px;
+height:22px;
+opacity:0.3;
+background-color:transparent;
+border:0;
+cursor:pointer;
+
+
+&:hover{
+    opacity:1
+}
+
+&:before, &:after{
+    position:absolute;
+    top:0;
+    left:5px;
+    content:'';
+    height:22px;
+    width:8px;
+    background-color:#333;
+}
+
+    &:before{
+        transform:rotate(45deg);
+    }
+
+    &:after{
+        transform:rotate(-45deg);
+    }
+}
 `;

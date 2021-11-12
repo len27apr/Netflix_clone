@@ -3,17 +3,29 @@ import { Header, Card, Player } from '../components';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 import {FooterContainer} from '../containers/footer';
+import Fuse from 'fuse.js';
 
 export const BrowseData = ({ user, firebase, slides, profile }) => {
     // console.log('the slides in BrowseData are: ',slides);
     const [searchTerm, setSearchTerm] = useState('');
-    const [Category, setCategory] = useState('series');
+    const [Category, setCategory] = useState('series'); 
     const [slideRows, setSlideRows] = useState([]);
     // console.log('the slideRows in BrowseData is: ',slideRows)
     useEffect(() => {
         setSlideRows(slides[Category])
     }, [Category, slides])
-
+    
+    useEffect(()=>{
+        const fuse=new Fuse(slideRows, {keys: ['data.description','data.title','data.genre']});
+        const results=fuse.search(searchTerm).map(({item})=>item);
+        if(slideRows.length>0 && searchTerm.length>3 && results.length >0)
+        {
+            setSlideRows(results);
+        }
+        else{
+            setSlideRows(slides[Category])
+        }
+    },[searchTerm, Category, slides])
     return (
         <>
             <Header src='joker1' dontShowOnSmallViewPort>
@@ -35,7 +47,7 @@ export const BrowseData = ({ user, firebase, slides, profile }) => {
                                     <Header.TextLink>{user.displayName}</Header.TextLink>
                                 </Header.Group>
                                 <Header.Group>
-                                    <Header.TextLink onClick={() => firebase.auth.signout()} >
+                                    <Header.TextLink onClick={() => firebase.auth().signOut()} >
                                         Sign out
                                     </Header.TextLink>
                                 </Header.Group>
