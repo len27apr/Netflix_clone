@@ -2,30 +2,65 @@ import React, { useState, useEffect } from 'react';
 import { Header, Card, Player } from '../components';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
-import {FooterContainer} from '../containers/footer';
-import Fuse from 'fuse.js';
+import { FooterContainer } from '../containers/footer';
+// import Fuse from 'fuse.js';
 
+// let results = [];
 export const BrowseData = ({ user, firebase, slides, profile }) => {
     // console.log('the slides in BrowseData are: ',slides);
     const [searchTerm, setSearchTerm] = useState('');
-    const [Category, setCategory] = useState('series'); 
+    const [Category, setCategory] = useState('series');
     const [slideRows, setSlideRows] = useState([]);
     // console.log('the slideRows in BrowseData is: ',slideRows)
+
+
     useEffect(() => {
         setSlideRows(slides[Category])
     }, [Category, slides])
+
+    // useEffect(() => {
+    //     const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
     
-    useEffect(()=>{
-        const fuse=new Fuse(slideRows, {keys: ['data.description','data.title','data.genre']});
-        const results=fuse.search(searchTerm).map(({item})=>item);
-        if(slideRows.length>0 && searchTerm.length>3 && results.length >0)
-        {
-            setSlideRows(results);
-        }
-        else{
-            setSlideRows(slides[Category])
-        }
-    },[searchTerm, Category, slides])
+    //     // console.log('\n\n\n the results after splice are: ', results)
+    //     // const results=fuse.search(searchTerm).map(({item})=>item);
+    //     const fuseArray = fuse.search(searchTerm);
+    //     console.log('\n\n use Effect in BrowseData.js running');
+    //     console.log('the length fuse array is: ',fuseArray.length);
+    //     if(fuseArray.length===0)
+    //         {
+    //             setSlideRows(slides[Category])
+    //             // setSlideRows((slideRows)=>slideRows);
+    //         }
+    //     // console.log('the search Term array length is: ',searchTerm.length);
+    //     else if (slideRows.length > 0 && searchTerm.length > 3) {
+            
+    //         if(results.length>0)
+    //         {
+    //             for(let i=0;i<results.length;i++)
+    //             {
+    //                 results.pop();
+    //                 return;
+    //             }
+                
+    //         }
+    //         if(results.length===0)
+    //         {
+    //             for (let i = 0; i < fuseArray.length; i++) {
+    //                 results.push(fuseArray[i].item);
+    //                 // console.log('the fuse array at index ',i, 'is: ',fuseArray[i].item);
+    //                 // console.log('the results in the for loop is: ',results,'\n\n\n');
+    //             }
+    //         }
+    //         console.log('\n\n the fuse array is: ',fuseArray)
+    //         console.log('the results in useEfect are: ', results);
+    //         setSlideRows(results);
+    //     }
+    //     else {
+    //         setSlideRows(slides[Category]);
+    //     }
+    // }, [searchTerm, Category, slides, slideRows])
+
+    
     return (
         <>
             <Header src='joker1' dontShowOnSmallViewPort>
@@ -67,7 +102,7 @@ export const BrowseData = ({ user, firebase, slides, profile }) => {
                     <Header.PlayButton>Play</Header.PlayButton>
                 </Header.Feature>
             </Header>
-            
+
             <Card.Group>
                 {slideRows.map((slideItem) => (
                     <Card key={`${Category}-${slideItem.title.toLowerCase()}`}>
