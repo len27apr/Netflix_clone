@@ -36,6 +36,8 @@ export const Link=styled.a`
    font-size:13px;
    text-decoration:none;
    cursor:pointer;
+   width:100%;
+   height:100%;
 `;
 
 export const Title=styled.p`
